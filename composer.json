@@ -2,6 +2,7 @@
     "name": "hopekelldev/laravel-duplo",
     "description": "Laravel package for interacting with Duplo endpoints",
     "version": "1.0.0",
+    "license": "MIT"
     "authors": [
         {
             "name": "Your Name",
