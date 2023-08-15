@@ -1,6 +1,6 @@
 <?php
 
-// laravel-duplo/src/DuploServiceProvider.php
+// packages/laravel-duplo/src/DuploServiceProvider.php
 
 namespace HopekellDev\LaravelDuplo;
 
@@ -10,6 +10,7 @@ class DuploServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        // Copy the configuration file
         $this->publishes([
             __DIR__ . '/../config/duplo.php' => config_path('duplo.php'),
         ], 'config');
@@ -20,4 +21,3 @@ class DuploServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/duplo.php', 'duplo');
     }
 }
-
