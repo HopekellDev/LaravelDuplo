@@ -2,19 +2,21 @@
     "name": "hopekelldev/laravel-duplo",
     "description": "Laravel package for interacting with Duplo endpoints",
     "version": "1.0.0",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your@email.com"
+            "name": "Hope Chukwuemeka Ezenwa",
+            "email": "hopekelltech@email.com"
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
-        "illuminate/support": "^8.0"
+        "php": ">=8.0",
+        "illuminate/support": ">=8.0",
+        "guzzlehttp/guzzle": "^7.2"
     },
     "autoload": {
         "psr-4": {
-            "HopekellDev\\LaravelDuplo\\": "src/"
+            "HopekellDev\\LaravelDuplo\\": "packages/laravel-duplo/src/"
         }
     }
     
