@@ -3,6 +3,11 @@
 namespace HopekellDev\LaravelDuplo\Helpers;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * Duplo's B2B payment laravel package
+ * @author Hope Chukwuemeka Ezenwa - Hopekell <hopekelltech@gmail.com>
+ * @version 1.0
+ **/
 class Payment
 {
     
