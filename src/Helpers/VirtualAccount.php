@@ -47,6 +47,7 @@ class VirtualAccount
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $account = Http::withHeaders($headers)->patch(
                 $this->apiUrl .'/virtual-accounts/:'.$ref.'?business_id=' . $this->businessId,
                 $data

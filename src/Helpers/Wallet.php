@@ -29,6 +29,7 @@ class Checkout
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $wallet = Http::withHeaders($headers)->get(
                 $this->apiUrl .'/wallets?bvn='.$data['bvn'].'&perPage='.$data['perPage'].'&business_id='.$data['business_id']
             )->json();
@@ -47,6 +48,7 @@ class Checkout
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $wallet = Http::withHeaders($headers)->post(
                 $this->apiUrl .'/wallets',
                 $data
@@ -85,6 +87,7 @@ class Checkout
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $transfer = Http::withHeaders($headers)->post(
                 $this->apiUrl .'/wallets/transfer-p2p',
                 $data
@@ -105,6 +108,7 @@ class Checkout
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $withdraw = Http::withHeaders($headers)->post(
                 $this->apiUrl .'/wallets/merchant-withdrawal',
                 $data
@@ -125,6 +129,7 @@ class Checkout
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $sweep = Http::withHeaders($headers)->post(
                 $this->apiUrl .'/wallets/multiple-merchant-withdrawal',
                 $data
@@ -145,7 +150,7 @@ class Checkout
         ];
 
         $balance = Http::withHeaders($headers)->get(
-                $this->apiUrl .'/:'. $data['wallet_ref'] . '?business_id=' . $data['business_id']
+                $this->apiUrl .'/:'. $data['wallet_ref'] . '?business_id=' . $this->businessId
             )->json();
                 
         return $balance;

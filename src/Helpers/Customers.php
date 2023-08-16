@@ -28,6 +28,7 @@ class Customers
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $customer = Http::withHeaders($headers)->post(
                 $this->apiUrl .'/wallets/customers',
                 $data

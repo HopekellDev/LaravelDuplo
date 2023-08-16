@@ -29,6 +29,7 @@ class Checkout
             'Content-Type' => 'application/json',
         ];
 
+        $data = array_merge($data, ['business_id' => $this->businessId]);
         $checkout_url = Http::withHeaders($headers)->post(
                 $this->apiUrl .'/checkout',
                 $data
