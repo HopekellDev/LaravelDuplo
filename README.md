@@ -32,11 +32,11 @@ The current features have been implemented
 - Digital Wallet
 - Transfers
 - Banks
+- Checkout
 
 I will be working on this next
 - Invoice
 - Beneficiaries
-- Checkout
 
 > If there are features you need urgently, I will be willing to prioritize them, please reach out to my twitter account
 ## License

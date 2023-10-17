@@ -1,15 +1,16 @@
 <?php
 
-namespace HopekellDev\LaravelDuplo\Helpers;
-
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Http;
-
 /**
  * Duplo's B2B payment laravel package
  * @author Hope Chukwuemeka Ezenwa - Hopekell <hopekelltech@gmail.com>
  * @version 1.0
  **/
+
+namespace HopekellDev\LaravelDuplo\Helpers;
+
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
+
 class Checkout
 {
     protected $apiKey;
@@ -40,6 +41,23 @@ class Checkout
                 $data
             )->json();
                 
-            return $checkout_url;
+        return $checkout_url;
+    }
+
+    /**
+     * Verify checkout transaction
+     */
+    public function verify($ref)
+    {
+        $headers = [
+            'Authorization' => 'Bearer ' . $this->apiKey,
+            'Content-Type' => 'application/json',
+        ];
+
+        $verify = Http::withHeaders($headers)->get(
+                $this->apiUrl .'/checkout/verify-transaction/:'.$ref.'?business_id=' . $this->businessId
+            )->json();
+                
+        return $verify;
     }
 }
